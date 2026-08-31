@@ -11,8 +11,28 @@ PPCアフィリエイト用ランディングページ（静的サイト）。
 | `styles.css` | スタイル。末尾にA8バナー用CSSを追記 |
 | `tracking.js` | Google広告コンバージョン・GA4イベントの発火 |
 | `pharmacist-hero.png` | ヒーロー画像（CSSから `/pharmacist-hero.png` で参照） |
+| `_headers` | Cloudflare用のキャッシュ・セキュリティヘッダ |
+| `wrangler.jsonc` | Cloudflareデプロイ設定 |
 
 ビルド不要。リポジトリ直下をそのまま配信すれば動作します。
+
+## デプロイ（Cloudflare）
+
+`lp4`（mikeiken-dojo）と同じ構成。`main` への push で自動デプロイされます。
+
+- プロジェクト名: `pharma-career-note`
+- アカウント: `Momotaso0514@gmail.com's Account` (`bedcbd62f6e3aa52ec0625cd09e19d88`)
+- ビルドコマンド: なし / 出力ディレクトリ: リポジトリ直下
+
+手動デプロイする場合:
+
+```bash
+npx wrangler login     # 初回のみ
+npx wrangler deploy
+```
+
+`_headers` でHTMLは `max-age=0, must-revalidate` にしています。
+計測タグを修正したときに古いHTMLが配信され続けるのを防ぐためです。
 
 ## アフィリエイト（A8.net）
 

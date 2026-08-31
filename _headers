@@ -1,0 +1,17 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# HTMLは常に最新を配信（計測タグを直したのに反映されない、を防ぐ）
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# 静的アセットは長期キャッシュ
+/styles.css
+  Cache-Control: public, max-age=3600
+/tracking.js
+  Cache-Control: public, max-age=3600
+/pharmacist-hero.png
+  Cache-Control: public, max-age=604800, immutable
