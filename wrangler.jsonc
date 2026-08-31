@@ -5,15 +5,10 @@
   "observability": {
     "enabled": true
   },
+  // 除外は .assetsignore で指定する。
+  // assets.exclude は Workers Assets では無効なオプションなので使わないこと。
   "assets": {
-    "directory": ".",
-    "exclude": [
-      ".git/**",
-      ".wrangler/**",
-      ".gitignore",
-      "README.md",
-      "wrangler.jsonc"
-    ]
+    "directory": "."
   },
   "compatibility_flags": [
     "nodejs_compat"

@@ -13,6 +13,7 @@ PPCアフィリエイト用ランディングページ（静的サイト）。
 | `pharmacist-hero.png` | ヒーロー画像（CSSから `/pharmacist-hero.png` で参照） |
 | `_headers` | Cloudflare用のキャッシュ・セキュリティヘッダ |
 | `wrangler.jsonc` | Cloudflareデプロイ設定 |
+| `.assetsignore` | Cloudflareへアップロードしないファイルの指定 |
 
 ビルド不要。リポジトリ直下をそのまま配信すれば動作します。
 
@@ -33,6 +34,18 @@ npx wrangler deploy
 
 `_headers` でHTMLは `max-age=0, must-revalidate` にしています。
 計測タグを修正したときに古いHTMLが配信され続けるのを防ぐためです。
+
+### ⚠️ アップロード除外は `.assetsignore` で行う
+
+`wrangler.jsonc` の `assets.exclude` は **Workers Assets では無効なオプション**で、
+書いても警告なく無視されます。これに気づかず初回デプロイした際、
+`.git/` ディレクトリ一式が公開状態になりました（`.assetsignore` 追加後は404）。
+
+除外は必ず `.assetsignore`（gitignore形式）に書き、デプロイ後に確認すること:
+
+```bash
+curl -o /dev/null -w "%{http_code}\n" https://<デプロイ先>/.git/config   # 404であること
+```
 
 ## アフィリエイト（A8.net）
 

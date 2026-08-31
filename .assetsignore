@@ -1,0 +1,12 @@
+# Cloudflareへアップロードしないファイル。
+# 注意: wrangler.jsonc の assets.exclude は Workers Assets では無効（黙って無視される）。
+# 除外はこのファイルで行うこと。
+.git
+.git/**
+.gitignore
+.assetsignore
+README.md
+wrangler.jsonc
+.wrangler
+.wrangler/**
+.DS_Store
