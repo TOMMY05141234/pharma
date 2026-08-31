@@ -16,32 +16,51 @@ PPCアフィリエイト用ランディングページ（静的サイト）。
 
 ## アフィリエイト（A8.net）
 
-- 広告主: ファルマスタッフ
-- リンク: `https://px.a8.net/svt/ejp?a8mat=4BAFPF+711DIA+276A+5ZU2A`
-- 設置箇所は 5 か所。各リンクに `data-cta` 属性で位置名を付与済み。
+広告主: ファルマスタッフ。A8管理画面で発行したタグを**そのまま**使用しています。
+`href` と バナー画像URL は改変しないでください（成果が計測されなくなります）。
 
-| `data-cta` | 位置 |
-| --- | --- |
-| `mid_compact` | 記事前半のコンパクトCTA |
-| `banner` | A8バナー |
-| `service_box` | サービス紹介直後のCTAボックス |
-| `final_message` | 記事末CTA |
-| `sticky` | 画面下部の追従CTA |
+### 発行タグは2種類（a8matが別物）
+
+| 用途 | a8mat | 設置数 |
+| --- | --- | --- |
+| テキストリンク | `4BAFPF+711DIA+276A+5ZU2A` | 4か所 |
+| バナー 336x280 | `4BAFPF+711DIA+276A+67JU9` | 1か所 |
+
+各リンクに `data-cta` 属性で位置名を付与しています。
+
+| `data-cta` | 位置 | a8mat |
+| --- | --- | --- |
+| `mid_compact` | 記事前半のコンパクトCTA | 5ZU2A |
+| `banner` | A8公式バナー（336x280） | 67JU9 |
+| `service_box` | サービス紹介直後のCTAボックス | 5ZU2A |
+| `final_message` | 記事末CTA | 5ZU2A |
+| `sticky` | 画面下部の追従CTA | 5ZU2A |
 
 ### インプレッション計測ピクセル
 
-`index.html` 末尾に A8 の 1x1 計測ピクセルを設置しています。
+a8matごとに1つずつ、計2つ設置しています。
 **削除するとA8側で表示回数が計測されません。**
 
 ```html
-<img class="a8Pixel" src="https://www19.a8.net/0.gif?a8mat=4BAFPF+711DIA+276A+5ZU2A" width="1" height="1" alt="">
+<!-- バナー用（<aside class="a8Banner"> 内） -->
+<img class="a8Pixel" border="0" width="1" height="1"
+     src="https://www19.a8.net/0.gif?a8mat=4BAFPF+711DIA+276A+67JU9" alt="">
+
+<!-- テキストリンク用（body末尾） -->
+<img class="a8Pixel" src="https://www19.a8.net/0.gif?a8mat=4BAFPF+711DIA+276A+5ZU2A"
+     width="1" height="1" alt="" aria-hidden="true">
 ```
 
-### バナーを公式素材に差し替える場合
+`.a8Pixel` クラスで非表示にしているだけで、リクエスト自体は送信されます。
 
-`index.html` の `<!-- ▼▼ A8バナー ここから ▼▼ -->` 〜 `<!-- ▲▲ A8バナー ここまで ▲▲ -->`
-のブロックごと、A8管理画面で発行したバナータグに置き換えてください。
-差し替え後も計測を維持するため、`<a>` に `data-cta="banner"` を残すこと。
+### バナーを別素材に差し替える場合
+
+`index.html` の `<!-- ▼▼ A8バナー ... ここから ▼▼ -->` 〜 `<!-- ▲▲ ... ▲▲ -->`
+のブロック内を、新しいバナータグに置き換えてください。その際、
+
+- `<a>` に `data-cta="banner"` を残す（Google広告のCV計測に必要）
+- 新しい a8mat のインプレッションピクセルも一緒に差し替える
+- `<img>` に `class="a8Pixel"` を付ける（非表示化）
 
 ## 計測タグ
 
@@ -74,7 +93,8 @@ Google広告側で分かるのは「クリックまで」です。
 
 ## 動作確認済み
 
-- 5か所すべてのCTAクリックで `googleadservices.com/pagead/conversion/18146496318/` が
+- バナー含む5か所すべてのCTAクリックで `googleadservices.com/pagead/conversion/18146496318/` が
   `label=FSoQCOX6quscEL6e9sxD` 付きで送信されることを確認
-- ページ読み込み時に GA4・A8ピクセルが発火することを確認
+- ページ読み込み時に GA4・A8バナー画像・A8ピクセル2種が発火することを確認
+- バナー画像が 336x280 で正しく表示されることを確認
 - コンソールエラーなし
