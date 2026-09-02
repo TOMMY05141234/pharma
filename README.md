@@ -49,51 +49,26 @@ curl -o /dev/null -w "%{http_code}\n" https://<デプロイ先>/.git/config   # 
 
 ## アフィリエイト（A8.net）
 
-広告主: ファルマスタッフ。A8管理画面で発行したタグを**そのまま**使用しています。
-`href` と バナー画像URL は改変しないでください（成果が計測されなくなります）。
-
-### 発行タグは2種類（a8matが別物）
+広告主: ファルマスタッフ。A8管理画面で発行したタグをそのまま使用しています。
+`href`・バナー画像URL・インプレッションピクセルは改変しないでください。
 
 | 用途 | a8mat | 設置数 |
 | --- | --- | --- |
-| テキストリンク | `4BAFPF+711DIA+276A+5ZU2A` | 4か所 |
-| バナー 336x280 | `4BAFPF+711DIA+276A+67JU9` | 1か所 |
+| テキストリンク | `4BAFPF+711DIA+276A+5ZU2A` | 5か所 |
+| バナー 350x240 | `4BAFPF+711DIA+276A+686ZL` | 1か所 |
 
-各リンクに `data-cta` 属性で位置名を付与しています。
+CTAごとに `data-cta` で位置名を付け、GA4でクリック位置を判別できます。
 
-| `data-cta` | 位置 | a8mat |
-| --- | --- | --- |
-| `mid_compact` | 記事前半のコンパクトCTA | 5ZU2A |
-| `banner` | A8公式バナー（336x280） | 67JU9 |
-| `service_box` | サービス紹介直後のCTAボックス | 5ZU2A |
-| `final_message` | 記事末CTA | 5ZU2A |
-| `sticky` | 画面下部の追従CTA | 5ZU2A |
+| `data-cta` | 位置 |
+| --- | --- |
+| `hero` | ファーストビュー |
+| `article_mid_1` | 記事前半 |
+| `official_banner` | A8公式バナー |
+| `article_mid_2` | サービス紹介後 |
+| `article_final` | 記事末 |
+| `sticky_footer` | 画面下部の追従CTA |
 
-### インプレッション計測ピクセル
-
-a8matごとに1つずつ、計2つ設置しています。
-**削除するとA8側で表示回数が計測されません。**
-
-```html
-<!-- バナー用（<aside class="a8Banner"> 内） -->
-<img class="a8Pixel" border="0" width="1" height="1"
-     src="https://www19.a8.net/0.gif?a8mat=4BAFPF+711DIA+276A+67JU9" alt="">
-
-<!-- テキストリンク用（body末尾） -->
-<img class="a8Pixel" src="https://www19.a8.net/0.gif?a8mat=4BAFPF+711DIA+276A+5ZU2A"
-     width="1" height="1" alt="" aria-hidden="true">
-```
-
-`.a8Pixel` クラスで非表示にしているだけで、リクエスト自体は送信されます。
-
-### バナーを別素材に差し替える場合
-
-`index.html` の `<!-- ▼▼ A8バナー ... ここから ▼▼ -->` 〜 `<!-- ▲▲ ... ▲▲ -->`
-のブロック内を、新しいバナータグに置き換えてください。その際、
-
-- `<a>` に `data-cta="banner"` を残す（Google広告のCV計測に必要）
-- 新しい a8mat のインプレッションピクセルも一緒に差し替える
-- `<img>` に `class="a8Pixel"` を付ける（非表示化）
+A8インプレッション計測には、テキスト用 `www15.a8.net / 5ZU2A` とバナー用 `www18.a8.net / 686ZL` のピクセルを使用しています。
 
 ## 計測タグ
 
