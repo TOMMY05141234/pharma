@@ -15,3 +15,10 @@
   Cache-Control: public, max-age=3600
 /pharmacist-hero.png
   Cache-Control: public, max-age=604800, immutable
+
+/compare/
+  Cache-Control: public, max-age=0, must-revalidate
+/compare/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/compare/assets/*
+  Cache-Control: public, max-age=604800, immutable
