@@ -22,3 +22,10 @@
   Cache-Control: public, max-age=0, must-revalidate
 /compare/assets/*
   Cache-Control: public, max-age=604800, immutable
+
+/lp1/
+  Cache-Control: public, max-age=0, must-revalidate
+/lp1/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/lp1/assets/*
+  Cache-Control: public, max-age=604800
