@@ -15,7 +15,15 @@ PPCアフィリエイト用ランディングページ（静的サイト）。
 | `wrangler.jsonc` | Cloudflareデプロイ設定 |
 | `.assetsignore` | Cloudflareへアップロードしないファイルの指定 |
 
+| `lp1/` | 薬剤師の企業転職LP（ChatGPT作成版を移植）。CTAはA8ファルマスタッフ、イラストはオリジナルSVG（`lp1/assets/`） |
+| `lp2/` | ファーマキャリア紹介LP（ChatGPT作成版を移植）。CTAは現状 公式URL直リンク（アフィリリンク未設定） |
+
 ビルド不要。リポジトリ直下をそのまま配信すれば動作します。
+
+### LPのアフィリリンク差し替え
+
+- `lp1/index.html` … `px.a8.net/svt/ejp?a8mat=4BAFPF+711DIA+276A+5ZU2A` が7か所（`data-cta="lp1_*"`）
+- `lp2/index.html` … `https://lp.pharmacareer.jp/short-a/` が3か所（`data-cta="lp2_*"`）。A8等のリンクに置き換えると `tracking.js` のクリック計測が動きます（`px.a8.net` を含むリンクのみ計測）
 
 ## デプロイ（Cloudflare）
 
