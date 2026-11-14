@@ -7,13 +7,10 @@
     clarityId: "",     // 例: "abcde12345"（Microsoft ClarityのプロジェクトID）
     // 広告主ごとのコンバージョンラベル（AW-ID/ラベル の「ラベル」部分）
     labels: {
-      // ファルマスタッフ_click_比較LP（ID 7902947448）のラベルが入るまでは、
-      // 既存の「ファルマスタッフ_click」のラベルで計測を途切れさせない。
-      // 新ラベルが分かったら、この行を差し替えること。
-      pharmastaff: "FSoQCOX6quscEL6e9sxD",
-      mediwell: "",    // メディウェル薬剤師_click_比較LP（ID 7902940258）
-      oshigoto: "",    // お仕事ラボ_click_比較LP（ID 7902947679）
-      mc: ""           // MC-ファーマネット_click_比較LP（ID 7902947712）
+      pharmastaff: "w88kCPjQtbgdEL6e9sxD", // ファルマスタッフ_click_比較LP（ID 7902947448）
+      mediwell: "0XrLCOKYtbgdEL6e9sxD",    // メディウェル薬剤師_click_比較LP（ID 7902940258）
+      oshigoto: "CMWOCN_StbgdEL6e9sxD",    // お仕事ラボ_click_比較LP（ID 7902947679）
+      mc: "khZMCIDTtbgdEL6e9sxD"           // MC-ファーマネット_click_比較LP（ID 7902947712）
     }
   };
 
