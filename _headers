@@ -27,12 +27,24 @@
   Cache-Control: public, max-age=0, must-revalidate
 /lp1/index.html
   Cache-Control: public, max-age=0, must-revalidate
-/lp1/assets/*
+/lp1/assets/*.webp
+  Cache-Control: public, max-age=604800
+/assets/*.png
   Cache-Control: public, max-age=604800
 
 /lp2/
   Cache-Control: public, max-age=0, must-revalidate
 /lp2/index.html
   Cache-Control: public, max-age=0, must-revalidate
-/lp2/assets/*
+/lp2/assets/*.webp
+  Cache-Control: public, max-age=604800
+/assets/*.png
+  Cache-Control: public, max-age=604800
+
+# 比較LP（ルート）のアセット。tracking.js は修正を早く反映させたいので短め
+/assets/tracking.js
+  Cache-Control: public, max-age=300
+/assets/*.webp
+  Cache-Control: public, max-age=604800
+/assets/*.png
   Cache-Control: public, max-age=604800
