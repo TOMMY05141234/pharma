@@ -4,7 +4,7 @@
   var CONFIG = {
     awId: "AW-18146496318",   // Google広告の「Googleタグ」のID
     ga4Id: "G-5M4MMZRL4E",    // GA4の測定ID
-    clarityId: "",     // 例: "abcde12345"（Microsoft ClarityのプロジェクトID）
+    clarityId: "zdlhiwjbzj",   // Microsoft ClarityのプロジェクトID
     // 広告主ごとのコンバージョンラベル（AW-ID/ラベル の「ラベル」部分）
     labels: {
       pharmastaff: "w88kCPjQtbgdEL6e9sxD", // ファルマスタッフ_click_比較LP（ID 7902947448）
