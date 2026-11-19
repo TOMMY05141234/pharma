@@ -231,6 +231,31 @@ body{padding-bottom:72px}
   .yk-rank__head{padding:var(--space-4) var(--space-6)}
   .yk-rank__cta{padding:0 var(--space-6) var(--space-8)}
 }
+
+/* ---- mobile: 比較表をカード表示、チェック欄を縦積みに ---- */
+.only-wide{display:none}
+@media (min-width:700px){.only-wide{display:inline}}
+@media (max-width:699px){
+  .yk-table-wrap{overflow:visible;background:transparent;border:0;border-radius:0}
+  .yk-table{min-width:0;display:block;border-collapse:collapse}
+  .yk-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .yk-table tbody{display:block}
+  .yk-table tr{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);margin:0 0 var(--space-4);overflow:hidden}
+  .yk-table tr.yk-table__pick{border-color:var(--brand)}
+  .yk-table tbody th{position:static;display:block;white-space:normal;background:var(--brand);color:var(--on-brand);border:0;padding:var(--space-3) var(--space-4);font-size:1.0625em}
+  .yk-table tr.yk-table__pick th{background:var(--brand)}
+  .yk-table__flag{color:var(--on-brand);opacity:.9;margin-top:2px}
+  .yk-table td,.yk-table tr.yk-table__pick td{display:block;background:var(--surface);border-bottom:1px solid var(--line);padding:var(--space-3) var(--space-4);white-space:normal}
+  .yk-table tr.yk-table__pick td{background:var(--highlight-bg)}
+  .yk-table td:last-child{border-bottom:0}
+  .yk-table td:nth-child(3){white-space:normal}
+  .yk-table td::before{content:attr(data-label);display:block;font-size:.8125em;font-weight:700;color:var(--brand);margin-bottom:2px}
+  .mini-table,.mini-table tbody,.mini-table tr,.mini-table th,.mini-table td{display:block;width:100%}
+  .mini-table tr{border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:var(--space-2);overflow:hidden}
+  .mini-table th{white-space:normal;background:var(--highlight-bg);border-bottom:0;padding:var(--space-2) var(--space-3) 0}
+  .mini-table td{border-bottom:0;padding:2px var(--space-3) var(--space-2)}
+  .mini-table caption{display:block}
+}
 </style>
 <script src="assets/tracking.js" defer></script>
 </head>
@@ -314,17 +339,17 @@ body{padding-bottom:72px}
   <section class="section tinted" id="compare" aria-labelledby="compare-h">
     <div class="wrap">
       <h2 class="h2" id="compare-h">4社をざっと比べる</h2>
-      <p class="body lead measure">細かい説明の前に、違いだけ先に見ておきたい人向けの表です。横にスクロールできます。</p>
+      <p class="body lead measure">細かい説明の前に、違いだけ先に見ておきたい人向けの表です。<span class="only-wide">横にスクロールできます。</span></p>
       <div class="yk-table-wrap" role="region" aria-label="転職サービス4社の比較表" tabindex="0">
         <table class="yk-table body-sm">
           <thead>
             <tr><th scope="col">サービス</th><th scope="col">合いそうな人</th><th scope="col">雇用形態</th><th scope="col">探し方・相談</th><th scope="col">先に確認したいこと</th></tr>
           </thead>
           <tbody>
-            <tr class="yk-table__pick"><th scope="row">ファルマスタッフ<span class="yk-table__flag caption">掲載順1・まず話を聞くなら</span></th><td>はじめての転職で、条件を整理したい人</td><td>正社員・パート・派遣</td><td>条件の相談、応募書類の添削、面接日程の調整</td><td>希望エリアの求人数、面談の方法（対面中心とされる）</td></tr>
-            <tr><th scope="row">メディウェル薬剤師</th><td>病院など医療機関を視野に入れたい人</td><td>正社員・パート・派遣・契約社員</td><td>病院求人や医療機関の情報提供、キャリア相談</td><td>希望の施設・エリアに求人があるか</td></tr>
-            <tr><th scope="row">お仕事ラボ</th><td>働き方から考えたい人</td><td>正社員・パート・派遣</td><td>都道府県別の求人検索、担当者への相談</td><td>希望エリアの求人数、相談方法（電話・オンラインなど）</td></tr>
-            <tr><th scope="row">MC-ファーマネット</th><td>勤務地や施設の種類を決めて探したい人</td><td>常勤・パート・派遣</td><td>都道府県・施設・職種で検索、見学や面接の調整</td><td>担当者の対応、気になる求人の更新状況</td></tr>
+            <tr class="yk-table__pick"><th scope="row">ファルマスタッフ<span class="yk-table__flag caption">掲載順1・まず話を聞くなら</span></th><td data-label="合いそうな人">はじめての転職で、条件を整理したい人</td><td data-label="雇用形態">正社員・パート・派遣</td><td data-label="探し方・相談">条件の相談、応募書類の添削、面接日程の調整</td><td data-label="先に確認したいこと">希望エリアの求人数、面談の方法（対面中心とされる）</td></tr>
+            <tr><th scope="row">メディウェル薬剤師</th><td data-label="合いそうな人">病院など医療機関を視野に入れたい人</td><td data-label="雇用形態">正社員・パート・派遣・契約社員</td><td data-label="探し方・相談">病院求人や医療機関の情報提供、キャリア相談</td><td data-label="先に確認したいこと">希望の施設・エリアに求人があるか</td></tr>
+            <tr><th scope="row">お仕事ラボ</th><td data-label="合いそうな人">働き方から考えたい人</td><td data-label="雇用形態">正社員・パート・派遣</td><td data-label="探し方・相談">都道府県別の求人検索、担当者への相談</td><td data-label="先に確認したいこと">希望エリアの求人数、相談方法（電話・オンラインなど）</td></tr>
+            <tr><th scope="row">MC-ファーマネット</th><td data-label="合いそうな人">勤務地や施設の種類を決めて探したい人</td><td data-label="雇用形態">常勤・パート・派遣</td><td data-label="探し方・相談">都道府県・施設・職種で検索、見学や面接の調整</td><td data-label="先に確認したいこと">担当者の対応、気になる求人の更新状況</td></tr>
           </tbody>
         </table>
       </div>
