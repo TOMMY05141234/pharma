@@ -84,6 +84,9 @@ a.yk-btn--secondary:hover{background:var(--brand-tint)}
 .yk-meta{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-4);margin:var(--space-4) 0;padding:0;list-style:none;color:var(--ink-muted)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3) var(--space-6);align-items:center;margin-top:var(--space-6)}
 .hero-actions .yk-btn{min-width:200px}
+.hero-reassure{margin:var(--space-3) 0 0;color:var(--ink-muted)}
+.closing-steps{margin:var(--space-4) 0 var(--space-5);padding-left:1.5em;color:var(--ink)}
+.closing-steps li{margin:0 0 var(--space-1)}
 .hero-art{position:relative;height:250px;overflow:hidden;background:var(--brand-tint);border-radius:var(--radius-md)}
 .hero-art img{position:absolute;bottom:0;height:auto}
 .hero-art .p-f{left:-2%;width:60%}
@@ -301,6 +304,7 @@ body{padding-bottom:72px}
           <a class="yk-btn yk-btn--secondary label-cta" href="#compare">4社を比べる</a>
           <a class="body-sm" href="#chooser">いまの状況から探す</a>
         </div>
+        <p class="hero-reassure caption">転職を決めていなくても読めます。相談だけの利用を公式に案内しているサービスもあります。</p>
       </div>
       <div class="hero-art" role="img" aria-label="白衣を着た女性薬剤師と男性薬剤師のイラスト（当サイトの案内役キャラクター）">
         <img class="p-f" src="assets/pharmacist-female-760.webp" srcset="assets/pharmacist-female-400.webp 400w, assets/pharmacist-female-760.webp 760w" sizes="260px" width="760" height="890" alt="" decoding="async">
@@ -331,6 +335,8 @@ body{padding-bottom:72px}
         <li><a href="#service-2"><span>病院で働いてきて、次も医療機関が気になる</span><span class="go body-sm">メディウェル薬剤師</span></a></li>
         <li><a href="#service-3"><span>正社員にこだわらず、派遣やパートも含めて考えたい</span><span class="go body-sm">お仕事ラボ</span></a></li>
         <li><a href="#service-4"><span>勤務地や施設の種類を決めて、求人を見ていきたい</span><span class="go body-sm">MC-ファーマネット</span></a></li>
+        <li><a href="#guide-salary"><span>年収を上げたい。何を聞けばいいか知りたい</span><span class="go body-sm">年収の見方</span></a></li>
+        <li><a href="#faq-area"><span>地方在住、または平日は時間を取りにくい</span><span class="go body-sm">確認したいこと</span></a></li>
       </ul>
     </div>
   </section>
@@ -562,7 +568,7 @@ body{padding-bottom:72px}
       <h2 class="h2" id="guide-h">求人を比べるときに、見落としやすいこと</h2>
       <p class="body lead measure">どのサービスを使うにしても、聞いておくと後悔しにくいことを3つ書いておきます。</p>
 
-      <div class="guide-item">
+      <div class="guide-item" id="guide-salary">
         <h3 class="h3">年収は、数字の中身まで聞いてみる</h3>
         <p class="body">年収500万円と550万円、どちらがいいかは数字だけでは決まりません。<mark class="hl">基本給がいくらか、賞与は実績なのか見込みなのか</mark>、残業代や手当がどこまで入っているのか。ここで、手取りも働き方もだいぶ変わってきます。</p>
         <p class="body">担当者には<mark class="hl">「この金額に残業代は入っていますか」</mark>くらいの聞き方で十分です。</p>
@@ -642,7 +648,7 @@ body{padding-bottom:72px}
           <summary class="body">希望年収が高いと、紹介されにくい？</summary>
           <p class="yk-faq__a body-sm">紹介できる求人は、地域や経験、勤務条件で変わります。金額だけでなく、勤務日数や役割、譲れない条件を分けて伝えると、どの条件なら選択肢があるのか見えやすくなります。年収が上がるかどうかは、どのサービスでも約束されるものではありません。</p>
         </details>
-        <details>
+        <details id="faq-area">
           <summary class="body">地方でも使えますか？</summary>
           <p class="yk-faq__a body-sm">求人の数は、サービスと地域によってかなり違います。拠点が東京だけのサービスもあるので、電話やオンラインで相談できるかも含めて、希望エリアの求人があるかを最初に聞いてみてください。</p>
         </details>
@@ -661,6 +667,11 @@ body{padding-bottom:72px}
         <h2 class="h2" id="closing-h">決めきれないときは</h2>
         <p class="body">ここまで読んでも決めきれなければ、<mark class="hl">まず1社だけ、話を聞いてみる</mark>のでも十分だと思います。</p>
         <p class="body">掲載順で1番目のファルマスタッフは、転職するか迷っている段階の相談も公式に案内されているので、最初の一歩にはなりやすいかもしれません。合わなければ、別のサービスに切り替えても大丈夫です。</p>
+        <ol class="closing-steps body-sm">
+          <li>ボタンを押すと、ファルマスタッフの公式サイトに移動します。</li>
+          <li>登録フォームに、希望の勤務地や働き方を分かる範囲で入力します。</li>
+          <li>担当者から連絡が来ます。「迷っている段階です」「電話は夜が助かります」など、希望は最初に伝えて大丈夫です。</li>
+        </ol>
         <div class="closing-actions">
           <div>
             <a class="yk-btn yk-btn--primary label-cta" href="https://px.a8.net/svt/ejp?a8mat=4BAFPF+711DIA+276A+63OYA" target="_blank" rel="sponsored nofollow noopener">ファルマスタッフの公式サイトを見る</a>
@@ -705,5 +716,8 @@ body{padding-bottom:72px}
 <div class="bottom-float">
   <a class="yk-btn yk-btn--secondary label-cta" href="#compare">4社を比べる</a>
 </div>
+<script>
+(function(){function o(){var e=location.hash&&document.querySelector(location.hash);if(e&&e.tagName==='DETAILS'){e.open=true;e.scrollIntoView()}}window.addEventListener('hashchange',o);o()})();
+</script>
 </body>
 </html>
