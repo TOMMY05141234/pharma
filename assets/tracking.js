@@ -57,7 +57,7 @@
     if (!a) return;
     var key = advertiserOf(a.href);
     if (!key) return;
-    var place = a.closest(".yk-rank__banner") ? "banner" : (a.closest(".closing") ? "closing" : "card");
+    var place = a.getAttribute("data-cta") || (a.closest(".yk-rank__banner") ? "banner" : (a.closest(".closing") ? "closing" : "card"));
     if (window.clarity) { window.clarity("set", "affiliate_click", key); window.clarity("event", "click_" + key); }
     if (CONFIG.awId && CONFIG.labels[key]) {
       gtag("event", "conversion", { send_to: CONFIG.awId + "/" + CONFIG.labels[key], event_callback: function () {} });

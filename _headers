@@ -48,3 +48,8 @@
   Cache-Control: public, max-age=604800
 /assets/*.png
   Cache-Control: public, max-age=604800
+
+/yakuzaishi-kyujin/
+  Cache-Control: public, max-age=0, must-revalidate
+/yakuzaishi-kyujin/index.html
+  Cache-Control: public, max-age=0, must-revalidate
