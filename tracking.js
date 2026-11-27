@@ -16,6 +16,14 @@
   var CONVERSION_ID = 'AW-18146496318/FSoQCOX6quscEL6e9sxD';
   var AFFILIATE_HOST = 'px.a8.net';
 
+  // Microsoft Clarity（ヒートマップ・録画）。比較LPと同じプロジェクトに送る
+  var CLARITY_ID = 'zdlhiwjbzj';
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, 'clarity', 'script', CLARITY_ID);
+
   function gtagSafe() {
     if (typeof window.gtag === 'function') {
       window.gtag.apply(null, arguments);
